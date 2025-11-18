@@ -40,7 +40,7 @@ chatForm.addEventListener("submit", async (event) => {
     ];
 
     // Replace with your actual Cloudflare Worker URL
-    const workerUrl = "https://project-loreal.tonymcmo.workers.dev";
+    const workerUrl = "https://project-loreal.tonymcmo.workers.dev/";
 
     // Send the request to the Cloudflare Worker
     const response = await fetch(workerUrl, {

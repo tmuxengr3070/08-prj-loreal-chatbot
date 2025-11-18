@@ -4,9 +4,14 @@ const userInput = document.getElementById("userInput");
 const chatWindow = document.getElementById("chatWindow");
 
 // Set initial message
-chatWindow.textContent = "👋 Hello! How can I help you today?";
+chatWindow.innerHTML = `<div class="msg ai"><strong>AI:</strong> 👋 Hello! How can I help you today?</div>`;
 
-// Get the user's message
+// Handle form submission
+chatForm.addEventListener("submit", async (event) => {
+  // Prevent the form from reloading the page
+  event.preventDefault();
+
+  // Get the user's message
   const userMessage = userInput.value.trim();
   if (!userMessage) return;
 
@@ -83,4 +88,5 @@ chatWindow.textContent = "👋 Hello! How can I help you today?";
 
     // Log the error to the console for debugging
     console.error("Error:", error);
-  };
+  }
+});
